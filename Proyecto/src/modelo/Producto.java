@@ -8,17 +8,12 @@ el producto no puede eliminarse si est√° asociado a una comanda. Usar eliminaci√
  */
 public class Producto
 {
-    enum Estado_Producto
-    {
-        ACTIVO, DISCONTINUADO;
-    }
-	private int id_producto;
-        private String nombre;
-	private double precioVenta;
-	private double precioCosto;
-        private int stock_inicial;
-        private Estado_Producto estado_producto = Estado_Producto.ACTIVO;
+    private int id_producto;
+    private String nombre;
+    private double precioVenta;
+    private double precioCosto;
+    private int stock_inicial;
+    private Constantes.Estado_Producto estado_producto = Constantes.Estado_Producto.ACTIVO;
 
-	
-	
+
 }

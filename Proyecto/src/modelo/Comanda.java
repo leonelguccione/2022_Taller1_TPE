@@ -19,13 +19,9 @@ Al momento de guardar la comanda se debe descontar del stock la cantidad pedida 
  */
 public class Comanda
 {
-    enum Estado_Comanda
-    {
-        ABIERTA, CERRADA;
-    }
     private Date fecha;
     private Mesa mesa;
     ArrayList<Pedido> productos_pedidos;
-    private Estado_Comanda estado_comanda = Estado_Comanda.ABIERTA;
-    
+    private Constantes.Estado_Comanda estado_comanda = Constantes.Estado_Comanda.ABIERTA;
+    private Mozo mozo_asignado; //ver esto
 }
