@@ -2,61 +2,25 @@ package modelo;
 
 import java.util.List;
 
+/**Reglas de negocio que sirven para el contrato
+ * 
+ los nro de mesa no pueden repetirse.
+ el nro de mesa 0 referencia a la BARRA
+ la cantidad de comensales debe ser > =2 cuando el nro de mesa es > 1
+ */
 public class Mesa
 {
-private int numero;
-private char estado='L';
-private List<Pedido> pedidos;
+    enum Estado
+    {
+        LIBRE, OCUPADO;
+    }
+    private int id_mesa;
 
-public Mesa(int numero)
-{
-	super();
-	this.numero = numero;
-}
-
-
-public int getNumero()
-{
-	return numero;
-}
-
-
-public char getEstado()
-{
-	return estado;
-}
-
-public void deshabilitar()
-{
-	
-}
-
-
-public void agregarPedido(Pedido nuevoPedido)
-{
-	}
-
-public void anularPedido(Pedido pedido)
-{
-	}
-
-public double getTotal(Cliente cliente)
-{
-	return 0;
-}
-
-
-public double cerrar(Cliente cliente) 
-{
-return 0;	
-}
-
-public void abrir() {}
-
-
-
-
-
-
-
+    /**cantidad de comensales, cuantas sillas acepta
+     */
+    private int capacidad; 
+    private Estado estado = Estado.LIBRE;
+    private Mozo mozo_asignado;
+    
+    //TODO: hacer todos los métodos necesarios
 }

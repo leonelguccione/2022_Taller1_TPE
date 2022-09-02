@@ -1,56 +1,24 @@
 package modelo;
 
-public abstract class Producto
+/**Reglas de Negocio:
+el precio de venta no puede ser menor al costo
+el precio de costo y venta debe ser > 0
+el producto no puede eliminarse si está asociado a una comanda. Usar eliminación lógica.
+
+ */
+public class Producto
 {
-	private String nombre;
+    enum Estado_Producto
+    {
+        ACTIVO, DISCONTINUADO;
+    }
+	private int id_producto;
+        private String nombre;
 	private double precioVenta;
 	private double precioCosto;
-	private boolean enPromocion=false;
-	private double descuento=0;
-	public Producto(String nombre, double precioVenta, double precioCosto)
-	{
-		super();
-		this.nombre = nombre;
-		this.precioVenta = precioVenta;
-		this.precioCosto = precioCosto;
-	}
-	public String getNombre()
-	{
-		return nombre;
-	}
-	
-	public double getPrecioVenta()
-	{
-		return precioVenta;
-	}
-	public void setPrecioVenta(double precioVenta)
-	{
-		this.precioVenta = precioVenta;
-	}
-	public double getPrecioCosto()
-	{
-		return precioCosto;
-	}
-	public void setPrecioCosto(double precioCosto)
-	{
-		this.precioCosto = precioCosto;
-	}
-	public boolean isEnPromocion()
-	{
-		return enPromocion;
-	}
-	public void setEnPromocion(boolean enPromocion)
-	{
-		this.enPromocion = enPromocion;
-	}
-	public double getDescuento()
-	{
-		return descuento;
-	}
-	public void setDescuento(double descuento)
-	{
-		this.descuento = descuento;
-	}
+        private int stock_inicial;
+        private Estado_Producto estado_producto = Estado_Producto.ACTIVO;
+
 	
 	
 }
